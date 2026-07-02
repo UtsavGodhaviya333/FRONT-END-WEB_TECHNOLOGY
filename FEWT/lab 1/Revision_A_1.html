@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+            height: 100px;
+            width: 100px;
+            animation-name: color-change;
+            animation-duration: 5s;
+          
+        }
+        @keyframes color-change {
+            from{
+                background-color: red;
+            }
+            to{
+                background-color: yellow;
+            }
+        }
+        .div2{
+            height: 100px;
+            width: 100px;
+            animation-name:movebox;
+            animation-duration: 5s;
+            background-color: red;
+            animation-iteration-count: infinite; 
+            position: relative;
+            animation-direction: reverse;
+            animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+           
+          
+        }
+        @keyframes movebox {
+           0%{
+            top: 0px;
+            left: 0px;
+           }
+           25%{
+            top: 0px;
+            left: 100px;
+           }
+           50%{
+            top: 100px;
+            left: 100px;
+           }
+           75%{
+            top: 100px;
+            left: 0px;
+           }
+           100%{
+            top: 0px;
+            left: 0px;
+           }
+        }
+
+        .link{
+            color: rgb(255, 0, 0);
+            margin-left: 300px;
+           
+        }
+        .link:visited{
+            color: rgb(255, 157, 0);
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+
+    <br>
+
+    <div class="div2"></div>
+
+    <br>
+
+    <a  class="link" href="https://flyzora-tours-traveling.netlify.app/">Visit Website</a>
+</body>
+</html>

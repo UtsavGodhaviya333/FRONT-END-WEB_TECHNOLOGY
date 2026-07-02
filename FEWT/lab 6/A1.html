@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        facultylist=[
+
+       
+        {facultyname : "Dr. Pradyumansinh Jadeja ",image : "https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/6---28-04-2023-02-06-07.jpg " },
+        {facultyname : "Dr. Nilesh Gambhava ",image : "https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/3---28-04-2023-02-02-42.jpg"},
+        {facultyname : "Prof. Rupesh Vaishnav",image :"https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/10---28-04-2023-02-07-03.jpg"}
+
+    ]
+        for(i=0;i<facultylist.length;i++){
+
+            document.write("<img src=\""+facultylist[i].image+"\"/>"+"br/" )
+            document.write("faculty name :"+facultylist[i].facultyname);
+            
+        }
+    </script>
+</body>
+</html>
