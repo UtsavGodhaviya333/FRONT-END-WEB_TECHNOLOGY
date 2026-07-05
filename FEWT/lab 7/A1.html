@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+    .calculator{
+
+        width: 300px;
+        height: 450px;
+        background-color: rgb(44, 39, 39);
+        margin-top: 50px;
+        border-radius: 10px;
+        margin-left: 500px;
+    }
+    #display{
+        width: 250px;
+        height: 50px;
+        margin-left: 20px;
+        margin-top: 20px;
+        border-radius: 10px;
+        background-color: #a7af7c;
+    }
+    .button{
+        margin-left: 20px;
+        margin-top: 20px;
+        padding:20px;
+        background-color: rgb(44, 39, 39);
+        
+        
+    }
+    button{
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        background-color: rgb(30, 27, 27);
+        color: white;
+        border-radius: 10px;
+    }
+
+    
+</style>    
+<body>
+
+    
+
+    <div class ="calculator">
+
+        <input type="text" id="display" readonly/>
+
+        <DIV class="button">
+
+        <div style="margin-top: 5px; padding: 10px; margin-left: -5px;">
+            <button  id="clear_btn" onclick="clearsc()" >C</button>
+            <button id="opretor" onclick="press('*')" >*</button>
+            <button id="opretor" onclick="press('/')" >/</button>
+            <button id="opretor" onclick="press('-')" >-</button></br>
+        </div>
+        
+        <div style="margin-top: 5px; padding: 10px; margin-left: -5px;">
+            <button id="number" onclick="press('7')" >7</button>
+            <button id="number" onclick="press('8')" >8</button>
+            <button id="number" onclick="press('9')" >9</button>
+            <button id="opretor" onclick="press('+')" >+</button></br>
+        </div>
+
+        <div style="margin-top: 5px; padding: 10px; margin-left: -5px;">     
+            <button id="number" onclick="press('4')" >4</button>
+            <button id="number" onclick="press('5')" >5</button>
+            <button id="number" onclick="press('6')" >6</button>
+            <button id="eqal" onclick="eqal()" >=</button></br>
+        </div>
+
+         <div style="margin-top: 5px; padding: 10px; margin-left: -5px;">     
+            <button id="number" onclick="press('1')" >1</button>
+            <button id="number" onclick="press('2')" >2</button>
+            <button id="number" onclick="press('3')" >3</button>
+            <button id="number" onclick="press('0')" >0</button>
+        </div>
+
+        </DIV>
+        
+    </div>
+
+    <script>
+
+        display=document.getElementById("display")
+
+
+        function clearsc(){
+
+            display.value=" "
+        }
+        function press(value){
+
+                display.value+=value
+        }
+
+        function eqal(){
+
+            try{
+                display.value=eval(display.value);
+            }
+            catch{
+                display.value="error"
+            }
+        }
+
+
+    </script>
+    
+</body>
+</html>
