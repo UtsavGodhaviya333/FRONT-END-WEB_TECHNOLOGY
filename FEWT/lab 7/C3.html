@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    
+        .scientificCalculator{
+            width: 500px;
+            height: 530px;
+            background-color: rgb(232, 232, 232);
+            margin-top: 30px;
+            border-radius: 10px;
+            margin-left: 400px;
+            border: 2px solid rgb(0, 0, 0);
+        }
+        #display{
+            width: 450px;
+            height: 70px;
+            margin-left: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            background-color: #000000;
+            color:green;
+            font-size: 20px;
+        }
+        #buttons{
+            margin-left: 20px;
+            margin-top: 20px;
+            font-size: 20px;
+            
+        }
+        button{
+            width: 85px;
+            height: 50px;
+            padding: 5px;
+            background-color: rgb(30, 27, 27);
+            color: white;
+            border-radius: 10px;
+            border: 2px solid rgb(0, 0, 0);
+
+        }
+        #number{
+            background-color: rgb(44, 39, 39);
+        }
+        #operator{
+            background-color: rgb(255, 166, 57);
+            color: black;
+        }
+        #tm{
+            background-color: rgb(0, 187, 255);
+            color: black;
+        }
+   </style>
+</head>
+<body>
+    <div class="scientificCalculator">
+
+        <input type="text" id="display" readonly>
+
+        <div id="buttons">
+        <div style="margin-top: 30px;  margin-left: 5px; ;">
+            <button id="clear" onclick="clearDisplay()">C</button>
+            <button id="backspace" onclick="backSpace()">←</button>
+            <button id="operator" onclick="press('(')">(</button>
+            <button id="operator" onclick="press(')')">)</button>
+            <button id="operator" onclick="press('/')">/</button>
+        </div>    
+            <br>
+        
+        <div style="margin-top: -5px; margin-left: 5px;">
+            <button id="number" onclick="press('7')">7</button>
+            <button id="number" onclick="press('8')">8</button>
+            <button id="number" onclick="press('9')">9</button>
+            <button id="operator" onclick="press('*')">*</button>
+            <button id="operator" onclick="sqrt()">√</button>
+        </div>
+            <br>
+        
+        <div style="margin-top: -5px; margin-left: 5px;">
+            <button id="number" onclick="press('4')">4</button>
+            <button id="number" onclick="press('5')">5</button>
+            <button id="number" onclick="press('6')">6</button>
+            <button id="operator" onclick="press('-')">-</button>
+            <button id="operator" onclick="squre()">x²</button>
+        </div> 
+            <br>
+
+        <div style="margin-top: -5px; margin-left: 5px;">
+            <button id="number" onclick="press('1')">1</button>
+            <button id="number" onclick="press('2')">2</button>
+            <button id="number" onclick="press('3')">3</button>
+            <button id="operator" onclick="press('+')">+</button>
+            <button id="operator" onclick="power()">xʸ</button>
+        </div>    
+            <br>
+        
+        <div style="margin-top: -5px; margin-left: 5px;">
+            <button  id="number" onclick="press('0')">0</button>
+            <button id="number" onclick="press('.')">.</button>
+            <button style="background-color: rgb(0, 178, 237); color: black; font-size: 20px;" id="equl" onclick="equl()">=</button>
+            <button id="tm" onclick="sin()">sin</button>
+            <button id="tm" onclick="cos()">cos</button>
+        </div>   
+            <br>
+        <div  style="margin-top: -5px; margin-left: 5px;">
+            <button id="tm" onclick="log()">log</button>
+            <button id="tm" onclick="ln()">ln</button>
+            <button id="tm" onclick="pi()">π</button>
+            <button id="tm" onclick="tan()">tan</button>
+            <button id="operator" onclick="press('%')">%</button>
+        </div>
+
+        </div>
+    </div>
+
+    <script>
+
+        let display = document.getElementById("display");
+
+        function clearDisplay()
+        {
+            display.value = "";
+        }
+        function backSpace()
+        {
+            display.value = display.value.slice(0,-1);
+        }
+        function press(value)
+        {
+            display.value += value 
+        }
+        function sqrt()
+        {
+            display.value = Math.sqrt(eval(display.value));
+        }
+        function power()
+        {
+            display.value = Math.pow(eval(display.value));
+        }
+        function equl()
+        {
+            try
+            {
+                display.value = eval(display.value);
+            }
+            catch(error)
+            {
+                display.value = "Error";
+            }
+        }
+
+        function sin()
+        {
+            display.value = Math.sin(eval(display.value) * 3.1415 / 180);
+        }
+        function cos()
+        {
+            display.value = Math.cos(eval(display.value) * 3.1415 / 180);
+        }
+        function tan()
+        {
+            display.value = Math.tan(eval(display.value) * 3.1415 / 180);
+        }
+        function log()
+        {
+            display.value = Math.log10(eval(display.value));
+        }
+        function ln()
+        {
+            display.value = Math.log(eval(display.value));
+        }
+        function pi()
+        {
+            display.value =( (display.value )*( Math.PI));
+        }
+
+    </script>
+</body>
+</html>
